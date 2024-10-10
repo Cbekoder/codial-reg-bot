@@ -3,7 +3,7 @@ from google.oauth2.service_account import Credentials
 from gspread import SpreadsheetNotFound
 
 SCOPE = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
-creds = Credentials.from_service_account_file('codial-bot-8a048ede2c1f.json', scopes=SCOPE)
+creds = Credentials.from_service_account_file('codial-gsheet.json', scopes=SCOPE)
 client = gspread.authorize(creds)
 
 spreadsheet = client.open("codial-registration")

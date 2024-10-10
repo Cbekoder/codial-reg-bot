@@ -1,6 +1,6 @@
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
-from aiogram.types import Message
+from aiogram.types import Message, ReplyKeyboardRemove
 from states.registrationStates import Registration
 from keyboards.default.basicKeyboards import ask_number, age_list, courseButtons
 from data.gSheets import write_to_google_sheets
@@ -70,6 +70,6 @@ async def process_course(message: Message, state: FSMContext):
         age=data["age"],
         course=data["course"]
     )
-    await message.answer("24 soat 🕗 ichida xodimlarimiz siz bilan bog'lanishadi.✅")
+    await message.answer("24 soat 🕗 ichida xodimlarimiz siz bilan bog'lanishadi.✅", reply_markup=ReplyKeyboardRemove())
     await state.clear()
 
